@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "word": "bonjour",
+        "transcription": "[bɔ̃.ʒuʁ]",
+        "translation": "здравствуйте"
+    },
+    {
+        "id": "2",
+        "word": "au revoir",
+        "transcription": "[o ʁə.vwaʁ]",
+        "translation": "до свидания"
+    },
+    {
+        "id": "3",
+        "word": "salut",
+        "transcription": "[sa.ly]",
+        "translation": "привет, пока"
+    },
+    {
+        "id": "4",
+        "word": "bonsoir",
+        "transcription": "[bɔ̃.swaʁ]",
+        "translation": "добрый вечер"
+    },
+    {
+        "id": "5",
+        "word": "bonne nuit",
+        "transcription": "[bɔn nɥi]",
+        "translation": "доброй ночи"
+    }
+]
