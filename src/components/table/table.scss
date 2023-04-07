@@ -15,6 +15,15 @@ $table-border: 1px solid grey;
     justify-content: space-around;
 }
 
+@mixin mainTableFeatures {
+    border: $table-border;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
 * {
     box-sizing: border-box;
 }
@@ -39,11 +48,7 @@ $table-border: 1px solid grey;
 }
 
 .table {
-    border: $table-border;
-    border-collapse: collapse;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    @include mainTableFeatures;
 }
 
 .table__cell{
@@ -76,4 +81,9 @@ $table-border: 1px solid grey;
     &:active {
         background-color: rgb(191, 113, 251);
     }
+}
+
+.table__adding {
+    @include mainTableFeatures;
+    margin-bottom: 200px;
 }
