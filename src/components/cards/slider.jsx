@@ -1,34 +1,37 @@
 import React, { useState } from 'react';
 
-function Slider ({children, props}) {
-
-    const [currentIndex, setCurrentIndex] = useState(0);
+function Slider({ children, sliderLength, currentIndexValue, ...props }) {
+    const [currentIndex, setCurrentIndex] = useState(currentIndexValue);
 
     const next = () => {
-      setCurrentIndex((currentIndex + 1) % props.length);
+        const newIndex = (currentIndex + 1) % sliderLength;
+        setCurrentIndex(newIndex);
+        props.changeIndex(newIndex); // !!!
     };
     const prev = () => {
-      setCurrentIndex((currentIndex - 1 + props.length) % props.length);
-    }
+        const newIndex = (currentIndex - 1 + sliderLength) % sliderLength;
+        setCurrentIndex(newIndex);
+        props.changeIndex(newIndex);  // !!!
+    };
 
     return (
-<>
-<div className='slider-container'>
-<div key={props.id} className={
-            props[currentIndex].id === props.id ? '' : 'slide'
-          }>
-{children}
-</div>
+      <>
+        <div className="slider-container">
 
-        <button onClick={prev}>Prev</button>
-        <button onClick={next}>Next</button>
+            {children}
 
-        <div>{currentIndex + 1} / {props.length}</div>
+        <div>
+            <button onClick={prev}>Prev</button>
+            <button onClick={next}>Next</button>
+        </div>
+            
 
-</div>
-</>
+            <div>
+            {currentIndex + 1} / {sliderLength}
+            </div>
+        </div>
+      </>
     );
+  }
 
-}
-
-export default Slider;
+    export default Slider;
