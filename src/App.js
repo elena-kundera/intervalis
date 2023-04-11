@@ -38,10 +38,13 @@ function App() {
 
 
       <TableHeader/>
+      <table className='table'>
       {
         words.map((word) =>
         <Table key={word.id} word={word.word} transcription={word.transcription} translation={word.translation}></Table>
         )}
+      </table>
+      
 
         <TableAdd></TableAdd>
       

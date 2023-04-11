@@ -21,7 +21,7 @@ function Table(props) {
 
 return (
     <>
-<table className='table'>
+
 <tr>
 <td className='table__cell'><input type="text" value={changeWord} onChange={ChangeWord}></input></td>
 <td className='table__cell'><input type="text" value={changeTranscription} onChange={changeTranscriptions}></input></td>
@@ -30,7 +30,7 @@ return (
 <td className='table__cell'></td>
 <td className='table__cell'><button className='table__button'>Удалить</button></td>
 </tr>
-</table>
+
     </>
 )
 

@@ -48,7 +48,11 @@ $table-border: 1px solid grey;
 }
 
 .table {
-    @include mainTableFeatures;
+    border: $table-border;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .table__cell{

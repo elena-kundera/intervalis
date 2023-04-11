@@ -47,3 +47,11 @@
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
+.table {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
