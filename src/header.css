@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.logo {
+  font-family: "Odibee Sans", sans-serif;
+  font-size: xx-large;
+}
+.logo a {
+  text-decoration: none;
+}
+.logo a:visited {
+  color: #544CAC;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15vh;
+  background-color: #F5F7FF;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 7px 10px #544CAC;
+}
+
+.adding_container {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.sendNewWord {
+  cursor: pointer;
+  background-color: #544CAC;
+  color: #F5F7FF;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
+  border: none;
+  border-radius: 47px;
+  padding: 5%;
+  width: 152px;
+  height: 49px;
+  transition: transform 0.7s ease;
+}
+.sendNewWord:hover {
+  transform: scale(1.1);
+}
+.sendNewWord:active {
+  background-color: rgb(191, 113, 251);
+}
+
+.inputNewWord {
+  border-radius: 47px;
+  padding: 5%;
+  width: 200px;
+  height: 49px;
+}/*# sourceMappingURL=header.css.map */

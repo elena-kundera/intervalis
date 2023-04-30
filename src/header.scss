@@ -17,6 +17,14 @@ $button-text-font: 'Open Sans', sans-serif;
 .logo {
     font-family: $logo-font;
     font-size: xx-large;
+    
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: $button-color;
+    }
 }
 
 .header {

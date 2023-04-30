@@ -8,11 +8,14 @@ function Header() {
         <>
         <header className="header">
 
-            <div className="logo_container"><p className='logo'>INTERVALIS</p></div>
+            <div className="logo_container"><p className='logo'><a href='/'>INTERVALIS</a></p></div>
 
             <div className='adding_container'>
-                <div className="inputNewWord_container"><input className='inputNewWord'></input></div>
-                <div className="sendNewWord_container"> <button className='sendNewWord'>Добавить слово</button></div>
+            <div className="sendNewWord_container"> <button className='sendNewWord'>Главная</button></div> 
+            <div className="sendNewWord_container"> <button className='sendNewWord'>Слова</button></div> 
+
+                {/* <div className="inputNewWord_container"><input className='inputNewWord'></input></div>
+                <div className="sendNewWord_container"> <button className='sendNewWord'>Добавить слово</button></div> */}
             </div>
         </header>
         

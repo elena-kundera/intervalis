@@ -8,16 +8,15 @@ function TableAdd() {
     const [newWord, setNewWord] = useState("");
 
     const getNewWord = (event) => {
-        setNewWord(event.target.value
-        );
+        setNewWord(event.target.value);
         console.log(newWord);
     }
 
 
-
     useEffect(() => {
-        const arr = localStorage.getItem('word') || []
+        const arr = localStorage.getItem('word') || '[]';
         setNewWord(JSON.parse(arr))
+        
     }, [])
 
     useEffect(() => {

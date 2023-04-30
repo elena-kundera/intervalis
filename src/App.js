@@ -1,56 +1,40 @@
 import './App.css';
-import React, { useState } from 'react';
-import words from './words.json';
-import Header from './components/header/header';
-import Card from './components/cards/card';
-import TableHeader from './components/table/table-header';
-import Table from './components/table/table';
-import TableAdd from './components/table/table-add';
-import Slider from './components/cards/slider';
-
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import './header.scss';
+import Home from './pages/home';
+import AllWords from './pages/allWords';
+import Game from './pages/game';
 
 
 function App() {
 
-  const [word, setWord] = useState(words[0]);
-  const [index, setIndex] = useState(0);
-
 
   return (
-    <div className="App">
+    <Router>
 
-      <Header/>
+<header className="header">
 
-      <Slider key={word.id} changeIndex={(index) => {setIndex(index); setWord(words[index]);}}
-        sliderLength={words.length}
-        currentIndexValue={index}
-      >
+<div className="logo_container"><p className='logo'><Link to="/">INTERVALIS</Link></p></div>
 
-        <Card
-          key={word.id}
-          word={word.word}
-          transcription={word.transcription}
-          translation={word.translation}
-        ></Card>
+<div className='adding_container'>
+<div className="sendNewWord_container"> <Link to="/game"><button className='sendNewWord'>Начать игру</button></Link></div> 
+<div className="sendNewWord_container"> <Link to="/table"><button className='sendNewWord'>Все слова</button></Link></div> 
 
-      </Slider>
+</div>
 
-
-      <TableHeader/>
-      <table className='table'>
-      {
-        words.map((word) =>
-        <Table key={word.id} word={word.word} transcription={word.transcription} translation={word.translation}></Table>
-        )}
-      </table>
+</header>
       
-
-        <TableAdd></TableAdd>
-      
-      
-  
-    </div>
+<Routes>
+          <Route path="/game" element={<Game />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/table" element={<AllWords />} />
+        </Routes>
+    </Router>
   );
 }
 
