@@ -15,6 +15,12 @@ function Slider({ children, sliderLength, currentIndexValue, ...props }) {
         props.changeIndex(newIndex);
     };
 
+    const [total, setTotal] = useState(0);
+    const handleChange = () => {
+      const newTotal = (total + 1);
+      setTotal(newTotal);
+    };
+
     return (
       <>
         <div className="slider-container">
@@ -22,8 +28,8 @@ function Slider({ children, sliderLength, currentIndexValue, ...props }) {
             {children}
 
         <div className="slider_buttonsContainer">
-            <button className='slider_button' onClick={prev}>Назад</button>
-            <button className='slider_button' onClick={next}>Дальше</button>
+            <button className='slider_button' onClick={prev} >Назад</button>
+            <button className='slider_button' onClick={next} handleChange={handleChange}>Дальше</button>
         </div>
             
 
@@ -31,6 +37,8 @@ function Slider({ children, sliderLength, currentIndexValue, ...props }) {
             {currentIndex + 1} / {sliderLength}
             </div>
         </div>
+
+        <div><p>Вы выучили {total} слов!</p></div>
       </>
     );
   }
