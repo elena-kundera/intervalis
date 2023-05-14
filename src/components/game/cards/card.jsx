@@ -1,15 +1,15 @@
 import './card.scss';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, forwardRef } from 'react';
 
-export default function Card(props) {
+
+
+const Card = forwardRef(function Card(props, ref) {
 
     let [check, setcheck] = useState(false);
     const handleCheck = () => {
         setcheck(!check);
     }
 
-    const ref = useRef();
-    useEffect(() => ref.current.focus(), []);
 
 
     return (
@@ -25,4 +25,6 @@ export default function Card(props) {
     );
 
 
-}
+})
+
+export default Card;
