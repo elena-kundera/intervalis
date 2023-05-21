@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './slider.scss';
 
 function Slider({ children, sliderLength, currentIndexValue, ...props }) {
+    const ref = useRef();
     const [currentIndex, setCurrentIndex] = useState(currentIndexValue);
 
     const next = () => {
+      ref.current.focus();
         const newIndex = (currentIndex + 1) % sliderLength;
         setCurrentIndex(newIndex);
         props.changeIndex(newIndex);
     };
     const prev = () => {
+      ref.current.focus();
         const newIndex = (currentIndex - 1 + sliderLength) % sliderLength;
         setCurrentIndex(newIndex);
         props.changeIndex(newIndex);
     };
 
-    // const ref = useRef();
-    // useEffect(() => ref.current.focus(), []);
 
-    
     // const [total, setTotal] = useState(0);
     // const handleChange = () => {
     //   const newTotal = (total + 1);
@@ -30,7 +30,10 @@ function Slider({ children, sliderLength, currentIndexValue, ...props }) {
         <div className="slider-container">
 
             {children} 
-{/* не понимаю как сделать задание, если детей я передаю вот так, куда пропсы прописывать?  */}
+{/* не понимаю как сделать задание, если детей 
+я передаю вот так; куда 
+рефы и всё остальное
+ прописывать?  */}
 
         <div className="slider_buttonsContainer">
             <button className='slider_button' onClick={prev} >Назад</button>

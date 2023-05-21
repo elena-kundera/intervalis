@@ -9,7 +9,7 @@ import './header.scss';
 import Home from './pages/home';
 import AllWords from './pages/allWords';
 import Game from './pages/game';
-
+import Comments from './pages/comments';
 
 function App() {
 
@@ -33,6 +33,7 @@ function App() {
           <Route path="/game" element={<Game />} />
           <Route path="/" element={<Home />} />
           <Route path="/table" element={<AllWords />} />
+          <Route path="/comments" element={<Comments />} />
         </Routes>
     </Router>
   );
