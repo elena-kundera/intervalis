@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import words from '../words.json';
-import Card from '../components/game/cards/card';
-import Slider from '../components/game/slider';
+import React, { useState } from "react";
+import { useContext } from "react";
+import Card from "../components/game/cards/card";
+import Slider from "../components/game/slider";
+import { WordContext } from "../components/wordsContext/WordContext";
 
-function Game () {
+function Game() {
+  const { data } = useContext(WordContext);
 
-    const [word, setWord] = useState(words[0]);
-    const [index, setIndex] = useState(0);
+  const [word, setWord] = useState(data[0]);
+  const [index, setIndex] = useState(0);
 
-
-    return (
-        <>
-        
-        <Slider key={word.id} changeIndex={(index) => {setIndex(index); setWord(words[index]);}}
-          sliderLength={words.length}
-          currentIndexValue={index}>
-
-              <Card
-                key={word.id}
-                word={word.word}
-                transcription={word.transcription}
-                translation={word.translation} 
-                ></Card>
-                
-        </Slider>
-
-
-        
-        </>
-
-    )
+  return (
+    <>
+      <Slider
+        key={word.id}
+        changeIndex={(index) => {
+          setIndex(index);
+          setWord(data[index]);
+        }}
+        sliderLength={data.length}
+        currentIndexValue={index}
+      >
+        <Card
+          key={word.id}
+          word={word.english}
+          transcription={word.transcription}
+          translation={word.russian}
+        ></Card>
+      </Slider>
+    </>
+  );
 }
 
 export default Game;

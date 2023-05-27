@@ -1,30 +1,31 @@
+// import words from "../words.json";
+import { useContext } from "react";
+import TableHeader from "../components/table/table-header";
+import Table from "../components/table/table";
+import TableAdd from "../components/table/table-add";
+import { WordContext } from "../components/wordsContext/WordContext";
 
-import words from '../words.json';
-// import Header from '../components/header/header';
-import TableHeader from '../components/table/table-header';
-import Table from '../components/table/table';
-import TableAdd from '../components/table/table-add';
+function AllWords() {
+  const { data } = useContext(WordContext);
 
-function AllWords () {
-
-    return (
-        <>
-        {/* <Header/> */}
-        
-        
-
-      <TableHeader/>
+  return (
+    <>
+      <TableHeader />
 
       <table className='table'>
-          {words.map((word) =>
-            <Table key={word.id} word={word.word} transcription={word.transcription} translation={word.translation}></Table>)}
+        {data.map((word) => (
+          <Table
+            key={word.id}
+            word={word.english}
+            transcription={word.transcription}
+            translation={word.english}
+          ></Table>
+        ))}
       </table>
-      
-        <TableAdd></TableAdd>
-        
-        </>
 
-    )
+      <TableAdd></TableAdd>
+    </>
+  );
 }
 
 export default AllWords;

@@ -1,46 +1,56 @@
-import React, { useState } from 'react';
-import words from '../words.json';
+import React, { useState, useContext } from "react";
+// import words from '../words.json';
 // import Header from '../components/header/header';
-import Card from '../components/game/cards/card';
-import TableHeader from '../components/table/table-header';
-import Table from '../components/table/table';
-import TableAdd from '../components/table/table-add';
-import Slider from '../components/game/slider';
+import Card from "../components/game/cards/card";
+import TableHeader from "../components/table/table-header";
+import Table from "../components/table/table";
+import TableAdd from "../components/table/table-add";
+import Slider from "../components/game/slider";
+import { WordContext } from "../components/wordsContext/WordContext";
 
-function Home () {
+function Home() {
+  const { data } = useContext(WordContext);
 
-    const [word, setWord] = useState(words[0]);
-    const [index, setIndex] = useState(0);
+  const [word, setWord] = useState(data[0]);
+  const [index, setIndex] = useState(0);
 
-    return (
-        <>
-        {/* <Header/> */}
-        
-        <Slider key={word.id} changeIndex={(index) => {setIndex(index); setWord(words[index]);}}
-          sliderLength={words.length}
-          currentIndexValue={index}>
+  return (
+    <>
+      {/* <Header/> */}
 
-              <Card
-                key={word.id}
-                word={word.word}
-                transcription={word.transcription}
-                translation={word.translation}></Card>
-                
-        </Slider>
+      <Slider
+        key={word.id}
+        changeIndex={(index) => {
+          setIndex(index);
+          setWord(data[index]);
+        }}
+        sliderLength={data.length}
+        currentIndexValue={index}
+      >
+        <Card
+          key={word.id}
+          word={word.english}
+          transcription={word.transcription}
+          translation={word.english}
+        ></Card>
+      </Slider>
 
-
-      <TableHeader/>
+      <TableHeader />
 
       <table className='table'>
-          {words.map((word) =>
-            <Table key={word.id} word={word.word} transcription={word.transcription} translation={word.translation}></Table>)}
+        {data.map((word) => (
+          <Table
+            key={word.id}
+            word={word.english}
+            transcription={word.transcription}
+            translation={word.english}
+          ></Table>
+        ))}
       </table>
-      
-        <TableAdd></TableAdd>
-        
-        </>
 
-    )
+      <TableAdd></TableAdd>
+    </>
+  );
 }
 
 export default Home;
