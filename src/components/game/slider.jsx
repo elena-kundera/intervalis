@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./slider.scss";
 
 function Slider({ children, sliderLength, currentIndexValue, ...props }) {

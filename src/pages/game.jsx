@@ -10,6 +10,8 @@ function Game() {
   const [word, setWord] = useState(data[0]);
   const [index, setIndex] = useState(0);
 
+  const [clickCounter, setclickCounter] = useState(0);
+
   return (
     <>
       <Slider
@@ -26,8 +28,11 @@ function Game() {
           word={word.english}
           transcription={word.transcription}
           translation={word.russian}
+          clickCounter={clickCounter}
+          setclickCounter={setclickCounter}
         ></Card>
       </Slider>
+      <h2>Вы посмотрели перевод {clickCounter} раз!</h2>
     </>
   );
 }
