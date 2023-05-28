@@ -20,7 +20,6 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    //Update the document title using the browser API
     fetch("http://itgirlschool.justmakeit.ru/api/words")
       .then((response) => {
         if (response.ok) {

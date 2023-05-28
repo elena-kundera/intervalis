@@ -1,12 +1,7 @@
 import "./card.scss";
 import React, { useState, forwardRef } from "react";
 
-const Card = forwardRef(function Card(
-  props,
-  ref,
-  clickCounter,
-  setclickCounter
-) {
+const Card = forwardRef(function Card(props, ref) {
   let [check, setcheck] = useState(false);
 
   const handleCheck = () => {

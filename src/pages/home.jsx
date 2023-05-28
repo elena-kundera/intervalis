@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-// import words from '../words.json';
 // import Header from '../components/header/header';
 import Card from "../components/game/cards/card";
 import TableHeader from "../components/table/table-header";
@@ -16,8 +15,6 @@ function Home() {
 
   return (
     <>
-      {/* <Header/> */}
-
       <Slider
         key={word.id}
         changeIndex={(index) => {
