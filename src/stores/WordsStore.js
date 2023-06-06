@@ -31,12 +31,6 @@ class WordStore {
   @action addWord = (thatNewWord) => {
     this.isLoading = true;
 
-    // const newWord = {
-    //   english: value.english,
-    //   russian: value.russiian,
-    //   transcription: value.transcription,
-    // };
-
     return fetch("api/words/add", {
       method: "POST",
       headers: {

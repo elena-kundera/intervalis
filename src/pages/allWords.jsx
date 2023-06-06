@@ -2,8 +2,6 @@
 import TableHeader from "../components/table/table-header";
 import Table from "../components/table/table";
 import TableAdd from "../components/table/table-add";
-// import { WordContext } from "../components/wordsContext/WordContext";
-// import { useEffect } from "react";
 import { observer, inject } from "mobx-react";
 import { useEffect } from "react";
 
