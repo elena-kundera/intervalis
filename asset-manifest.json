@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/intervalis/static/css/main.d8c90784.css",
+    "main.js": "/intervalis/static/js/main.48eb81ba.js",
+    "static/js/787.2dc6a620.chunk.js": "/intervalis/static/js/787.2dc6a620.chunk.js",
+    "index.html": "/intervalis/index.html",
+    "main.d8c90784.css.map": "/intervalis/static/css/main.d8c90784.css.map",
+    "main.48eb81ba.js.map": "/intervalis/static/js/main.48eb81ba.js.map",
+    "787.2dc6a620.chunk.js.map": "/intervalis/static/js/787.2dc6a620.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8c90784.css",
+    "static/js/main.48eb81ba.js"
+  ]
+}
