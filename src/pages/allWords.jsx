@@ -16,7 +16,7 @@ const AllWords = inject(["wordStore"])(
         <TableHeader />
 
         <table className='table'>
-          {wordStore.words.map((word, index) => (
+          {wordStore.words.map((word) => (
             <Table
               id={word.id}
               word={word.english}

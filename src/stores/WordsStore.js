@@ -51,12 +51,19 @@ class WordStore {
       });
   };
 
-  @action removeWord = (word) => {
-    const index = this.words.indexOf(word);
+  @action removeWord = (id) => {
+    const index = this.words.findIndex((word) => word.id === id);
 
-    if (index > -1) {
+    if (index !== -1) {
       this.words.splice(index, 1);
     }
+
+    fetch(`api/words/${id}/delete`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    });
   };
 
   @computed get wordCount() {
