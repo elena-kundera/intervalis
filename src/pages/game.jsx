@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Card from "../components/game/cards/card";
 import Slider from "../components/game/slider";
 import { WordContext } from "../components/wordsContext/WordContext";
+import {observer, inject} from "mobx-react";
 
 function Game() {
   const { data } = useContext(WordContext);
